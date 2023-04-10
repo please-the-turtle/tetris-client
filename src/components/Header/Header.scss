@@ -1,0 +1,33 @@
+@import "/src/_vars";
+
+.header {
+    color: $white;
+    display: flex;
+    height: 100%;
+}
+
+.header__navigation {
+    gap: 16px;
+    flex-direction: row;
+    display: flex;
+
+    a {
+        font-size: 28px;
+        text-decoration: none;
+
+        &:visited {
+            color: $textColorLight;
+        }
+    }
+}
+
+.header__navigation__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__navigation__item_bold {
+    font-weight: 700;
+}
