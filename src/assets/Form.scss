@@ -1,0 +1,58 @@
+@import "/src/vars";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    // min-width: 11em;
+    max-width: 15em;
+    padding: 5px 0;
+    gap: 5px;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+
+    input {
+        border: none;
+        border-radius: 3px;
+        font-family: $fontFamilyDefault;
+    }
+}
+
+.form__buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; 
+
+    a {
+        color: $textColorLight;
+        text-decoration: none;
+        font-style: italic;
+    }
+}
+
+.form__buttons-container__button {
+    background-color: $white;
+    border-style: none;
+    padding: 0.2em 0.6em;
+    border-radius: 6px;
+
+    &:active {
+        background-color: $blue;
+    }
+}
+
+.form__field__description {
+    font-size: 18px;
+    font-style: italic;
+    color: $grey;
+}
+
+.form__field__error-message {
+    font-size: 22px;
+    font-style: italic;
+    color: $red;
+}

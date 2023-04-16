@@ -1,10 +1,16 @@
 @import './vars';
 
-body {
+html, body {
     background-color: $bgColorDark;
-    font-size: 12px;
-    font-family: 'Sofia Sans Condensed';
+    font-size: 24px;
+    font-family: $fontFamilyDefault;
     color: $textColorLight;
+    height: 100%;
+}
+
+button {
+    font-size: 24px;
+    font-family: $fontFamilyDefault;
 }
 
 html, body, div, span, object, iframe, p, blockquote, pre, a, abbr, 
@@ -18,5 +24,4 @@ ruby, section, summary, time, mark, audio, video, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     border: 0;
     outline: 0;
-    height: 100%;
 }

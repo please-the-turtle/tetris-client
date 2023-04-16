@@ -8,6 +8,8 @@ export default function Header() {
                 <Link to='' className='header__navigation__item header__navigation__item_bold'>🏡 Home</Link>
                 <Link to='friends' className='header__navigation__item'>friends</Link>
                 <Link to='statistics' className='header__navigation__item'>statistics</Link>
+
+                <Link to='game' className='header__navigation__item'>game page</Link>
             </nav>
         </header>
     )
