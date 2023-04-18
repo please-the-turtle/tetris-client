@@ -6,7 +6,7 @@ import {
     FormSubmit,
     useFormState,
 } from "ariakit/form";
-import "../assets/Form.scss"
+import "./Form.scss"
 import { Link } from "react-router-dom";
 
 export default function LoginForm() {
@@ -20,7 +20,7 @@ export default function LoginForm() {
         <Form state={form} className="form">
             <div>
                 <div className="form__field">
-                    <FormLabel name={form.names.login}>Login</FormLabel>
+                    <FormLabel name={form.names.login}>Login:</FormLabel>
                     <FormInput
                         name={form.names.login}
                         required
@@ -33,7 +33,7 @@ export default function LoginForm() {
             </div>
             <div>
                 <div className="form__field">
-                    <FormLabel name={form.names.password}>Password</FormLabel>
+                    <FormLabel name={form.names.password}>Password:</FormLabel>
                     <FormInput
                         name={form.names.password}
                         required
