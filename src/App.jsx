@@ -13,7 +13,7 @@ function App() {
       <div className="layout__header">
         <Header />
       </div>
-      <div className="layout__body">
+      <main className="layout__body">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="game" element={<Game />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </div>
+      </main>
     </div>
   );
 }
