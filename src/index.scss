@@ -11,6 +11,17 @@ html, body {
 button {
     font-size: 24px;
     font-family: $fontFamilyDefault;
+    background-color: $white;
+    border-style: none;
+    border-radius: 6px;
+
+    &:active {
+        background-color: $blue;
+    }
+}
+
+a, a:hover, a:active {
+    color: $textColorLight;
 }
 
 html, body, div, span, object, iframe, p, blockquote, pre, a, abbr, 
