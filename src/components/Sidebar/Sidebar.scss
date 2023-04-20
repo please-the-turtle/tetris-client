@@ -1,0 +1,19 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    translate: -200%;
+    align-items: flex-start;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    position: relative;
+    z-index: 600;
+
+    transition: 350ms;
+}
+
+.active {
+    translate: 0;
+    transition: 350ms;
+}

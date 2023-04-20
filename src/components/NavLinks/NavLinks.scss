@@ -1,0 +1,19 @@
+@import "/src/_vars";
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.navigation__item {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    font-size: 28px;
+    color: $textColorLight;
+}
+
+.navigation__item_bold {
+    font-weight: 700;
+}

@@ -6,40 +6,10 @@ header {
     height: 35px;
 }
 
-%nav-link {
-    a {
-        font-size: 28px;
-        text-decoration: none;
-
-        &:visited {
-            color: $textColorLight;
-        }
-    }
-}
-
 .header__navigation {
     display: flex;
     gap: 16px;
     flex-direction: row;
-
-    @extend %nav-link;
-}
-
-.sidebar {
-    display: flex;
-    gap: 16px;
-    flex-direction: column;
-    margin-left: auto;
-    translate: -200%;
-    align-items: flex-start;
-    padding: 20px;
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    position: relative;
-    z-index: 600;
-
-    @extend %nav-link;
-    transition: 350ms;
 }
 
 .sidebar__button {
@@ -52,19 +22,3 @@ header {
     }
 }
 
-.active {
-    translate: 0;
-    transition: 350ms;
-}
-
-.header__navigation__item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 6px
-}
-
-.header__navigation__item_bold {
-    font-weight: 700;
-}
