@@ -25,6 +25,18 @@
     }
 }
 
+.form__error-message {
+    background-color: $red;
+    padding: 5px 8px;
+    border-radius: 3px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: $textColorDark;
+    font-style: italic;
+}
+
 .form__buttons-container {
     display: flex;
     justify-content: space-between;

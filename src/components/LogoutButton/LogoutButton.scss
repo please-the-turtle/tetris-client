@@ -1,0 +1,17 @@
+@import '/src/vars';
+
+.button {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    display: flex;
+    align-items: center;
+
+    background-color: $darkest;
+    cursor: pointer;
+    font-size: 1.5em;
+
+    &:active {
+        background-color: $darkest;
+    }
+}
