@@ -1,5 +1,26 @@
+import { useRef, useState, useEffect } from "react";
+import Tetris from "tetris-core/Tetris";
+import KeyboardTetrisController from "tetris-core/KeyboardTetrisController";
+import CenterContainer from "components/CenterContainer";
+import TetrisSessionContainer from "components/tetris/TetrisSessionContainer";
+
 export default function Game() {
+    const refTetris = useRef();
+    const [state, setState] = useState();
+
+    useEffect(() => {
+        const tetris = Tetris('seed');
+        refTetris.current = tetris;
+        refTetris.current.addStateListener(() => {
+            setState(refTetris.current.state)
+        });
+        KeyboardTetrisController(refTetris.current);
+        tetris.start();
+    }, [])
+
     return (
-        <h1>Game field</h1>
+        <CenterContainer>
+            <TetrisSessionContainer playerState={state} />
+        </CenterContainer>
     )
 }

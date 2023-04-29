@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/Header";
-import Loading from "./components/Loading";
-import Home from "./pages/Home";
-import PageNotFound from "./pages/PageNotFound";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Game from "./pages/Game";
+import Header from "components/Header";
+import Loading from "components/Loading";
+import Home from "pages/Home";
+import PageNotFound from "pages/PageNotFound";
+import Login from "pages/Login";
+import Register from "pages/Register";
+import Game from "pages/Game";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { Context } from "./index";
+import { Context } from "index";
 import { observer } from "mobx-react-lite";
 
 function App() {
@@ -24,6 +24,18 @@ function App() {
     authorize();
   }, [authorize]);
 
+  return (
+    <div className="layout">
+      <div className="layout__header">
+        <Header />
+      </div>
+      <main className="layout__body">
+        <Game />
+      </main>
+    </ div>
+  )
+
+  // eslint-disable-next-line
   if (isLoading) {
     return (
       <Loading />

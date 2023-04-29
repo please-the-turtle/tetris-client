@@ -4,20 +4,26 @@
     max-width: 1440px;
     overflow: visible;
     width: 100%;
-    min-width: 320px;
     height: 100%;
     min-height: 100%;
-    margin: 0 auto;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
 }
 
 .layout__body {
-    padding: 10px 25px;
+    display: flex;
+    position: relative;
+    padding: 0 25px;
     height: 100%;
 }
 
 .layout__header {
     padding: 10px 25px;
+    position: absolute;
+    z-index: 600;
+    max-height: 30px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
