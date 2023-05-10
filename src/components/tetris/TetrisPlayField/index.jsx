@@ -37,17 +37,19 @@ export default function TetrisPlayField({ state }) {
     }
     console.log(state?.isGameOver);
     return (
-        <div className="__game-field">
-            <div className={state?.isGameOver ?
-                "__game-over-screen" :
-                "__game-over-screen _hidden"}>
-                <div>
-                    <h1>GAME OVER</h1>
-                    press Enter to restart
+        <div className="__game-field-container">
+            <div className="__game-field">
+                <div className={state?.isGameOver ?
+                    "__game-over-screen" :
+                    "__game-over-screen _hidden"}>
+                    <div>
+                        <h1>GAME OVER</h1>
+                        press Enter to restart
+                    </div>
                 </div>
+                {renderActiveTetromino()}
+                {renderFixedBlocks()}
             </div>
-            {renderActiveTetromino()}
-            {renderFixedBlocks()}
         </div>
     )
 } 

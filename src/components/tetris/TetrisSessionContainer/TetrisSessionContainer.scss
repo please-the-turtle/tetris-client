@@ -1,14 +1,14 @@
-.container {
+.game-container {
     display: grid;
     grid-auto-flow: row;
-    gap: 2%;
-    height: 81vh;
-    width: 61vh;
+    gap: 6px;
+    height: 80vh;
+    width: 60vh;
     grid-template-columns: 2fr 1fr;
 }
 
 @media (max-aspect-ratio: 1/1.6) {
-    .container {
+    .game-container {
         height: 121vw;
         width: 91vw;
     }
@@ -17,12 +17,13 @@
 .main-area {
     grid-column: 1;
     display: flex;
+    gap: 1%;
     flex-direction: column;
 }
 
 .side-area {
     grid-column: 2;
-    gap: 1%;
+    gap: 6px;
     display: flex;
     flex-direction: column;
 }

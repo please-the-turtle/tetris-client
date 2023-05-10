@@ -6,7 +6,7 @@ import TetrisNextTetrominoCard from "../TetrisNextTetrominoCard";
 
 export default function TetrisSessionContainer({ playerState, rivalState }) {
     return (
-        <div className="container">
+        <div className="game-container">
             <section className="main-area">
                 <TetrisPlayField state={playerState} />
                 <TetrisScoreCounter scoreCount={playerState?.score} />
