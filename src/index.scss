@@ -6,6 +6,7 @@ html, body {
     font-family: $fontFamilyDefault;
     color: $textColorLight;
     height: 100%;
+    touch-action: none;
 }
 
 #root {

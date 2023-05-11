@@ -5,6 +5,10 @@
     height: 80vh;
     width: 60vh;
     grid-template-columns: 2fr 1fr;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 
 @media (max-aspect-ratio: 1/1.6) {
