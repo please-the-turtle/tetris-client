@@ -1,4 +1,7 @@
+@import "/src/vars";
+
 .level-counter {
     font-size: 4em;
     font-weight: 600;
+    text-shadow: $shadowSoft;
 }
