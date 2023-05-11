@@ -1,4 +1,4 @@
-import Point2d, { getDistanseBetweenPoints } from "utils/Point2d";
+import Point2d from "utils/Point2d";
 
 export default function GesturesTetrisController(tetris) {
     const moveTetrominoThreshold = 30;
