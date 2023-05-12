@@ -1,7 +1,7 @@
-import Overlay from "components/Overlay";
 import Block from "../Block";
 import "./TetrisPlayField.scss";
 import BlockTypes from "tetris-core/BlockTypes.js";
+import GameOverScreen from "../GameOverScreen";
 
 export default function TetrisPlayField({ state }) {
 
@@ -41,13 +41,7 @@ export default function TetrisPlayField({ state }) {
     return (
         <div className="__game-field-container">
             <div className="__game-field">
-                <Overlay isHidden={!state?.isGameOver}>
-                    <h1>GAME OVER</h1>
-                    <button onClick={() => document.dispatchEvent(
-                        new KeyboardEvent('keydown', { 'code': 'Enter' }))}>
-                        restart
-                    </button>
-                </ Overlay>
+                <GameOverScreen isGameOver={state?.isGameOver} />
                 {renderActiveTetromino()}
                 {renderFixedBlocks()}
             </div>
