@@ -35,9 +35,23 @@ export default function TetrisPlayField({ state }) {
             })
         )
     }
+
     console.log(state?.isGameOver);
     return (
         <div className="__game-field-container">
+            <div className="__game-field">
+                <div className={state?.isGameOver ?
+                    "__game-over-screen" :
+                    "__game-over-screen _hidden"}>
+                    <div>
+                        <h1>GAME OVER</h1>
+                        <button onClick={() => document.dispatchEvent(
+                            new KeyboardEvent('keydown', { 'code': 'Enter' }))}>
+                            restart
+                        </button>
+                    </div>
+                </div>
+            </div>
             <div className="__game-field">
                 <div className={state?.isGameOver ?
                     "__game-over-screen" :

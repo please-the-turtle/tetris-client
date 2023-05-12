@@ -48,6 +48,14 @@
         text-shadow: #000000FF 5px 0 20px;
         font-size: 2em;
     }
+
+    button {
+        background: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.25em;
+        font-style: italic;
+    }
 }
 
 ._hidden {
