@@ -1,3 +1,4 @@
+import Overlay from "components/Overlay";
 import Block from "../Block";
 import "./TetrisPlayField.scss";
 import BlockTypes from "tetris-core/BlockTypes.js";
@@ -40,27 +41,13 @@ export default function TetrisPlayField({ state }) {
     return (
         <div className="__game-field-container">
             <div className="__game-field">
-                <div className={state?.isGameOver ?
-                    "__game-over-screen" :
-                    "__game-over-screen _hidden"}>
-                    <div>
-                        <h1>GAME OVER</h1>
-                        <button onClick={() => document.dispatchEvent(
-                            new KeyboardEvent('keydown', { 'code': 'Enter' }))}>
-                            restart
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className="__game-field">
-                <div className={state?.isGameOver ?
-                    "__game-over-screen" :
-                    "__game-over-screen _hidden"}>
-                    <div>
-                        <h1>GAME OVER</h1>
-                        press Enter to restart
-                    </div>
-                </div>
+                <Overlay isHidden={!state?.isGameOver}>
+                    <h1>GAME OVER</h1>
+                    <button onClick={() => document.dispatchEvent(
+                        new KeyboardEvent('keydown', { 'code': 'Enter' }))}>
+                        restart
+                    </button>
+                </ Overlay>
                 {renderActiveTetromino()}
                 {renderFixedBlocks()}
             </div>
