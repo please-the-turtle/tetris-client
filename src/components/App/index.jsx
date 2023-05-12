@@ -24,18 +24,6 @@ function App() {
     authorize();
   }, [authorize]);
 
-  return (
-    <div className="layout">
-      <div className="layout__header">
-        <Header />
-      </div>
-      <main className="layout__body">
-        <Game />
-      </main>
-    </ div>
-  )
-
-  // eslint-disable-next-line
   if (isLoading) {
     return (
       <Loading />
@@ -48,6 +36,7 @@ function App() {
         <Routes>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="singleplayer" element={<Game />} />
           <Route path="*" element={<Login />} />
         </Routes>
       </div>
