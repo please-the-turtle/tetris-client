@@ -50,14 +50,9 @@
 }
 
 .form__buttons-container__button {
-    background-color: $white;
     border-style: none;
     padding: 0.2em 0.6em;
     border-radius: 6px;
-
-    &:active {
-        background-color: $blue;
-    }
 }
 
 .form__field__description {
