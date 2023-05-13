@@ -1,6 +1,5 @@
 import Block from "../Block";
 import "./TetrisPlayField.scss";
-import BlockTypes from "tetris-core/BlockTypes.js";
 import GameOverScreen from "../GameOverScreen";
 
 export default function TetrisPlayField({ state }) {
@@ -8,16 +7,11 @@ export default function TetrisPlayField({ state }) {
     function renderFixedBlocks() {
         return state && state.field.map((row, i) =>
             row.map((block, j) => {
-                if (block === BlockTypes.None) {
-                    return undefined;
-                }
                 return (
-                    <div key={11 - i + j} className={"__block _block-color_" + block}
-                        style={{
-                            gridColumn: j + 1,
-                            gridRow: i + 1
-                        }}>
-                    </div>
+                    <Block key={88 - i + j}
+                        x={j + 1}
+                        y={i + 1}
+                        color={block} />
                 )
             })
         )
@@ -26,24 +20,31 @@ export default function TetrisPlayField({ state }) {
     function renderActiveTetromino() {
         return state && state.activeTetromino.blocks.map((row, i) =>
             row.map((block, j) => {
-                if (block === 0) return undefined;
-                return (
+                let xPos = state.activeTetromino.x + j + 1;
+                let yPos = state.activeTetromino.y + i + 1;
+                return ( 
+                    isOutsideField(xPos, yPos) ? undefined :
                     <Block key={34 - i + j}
-                        x={state.activeTetromino.x + j + 1}
-                        y={state.activeTetromino.y + i + 1}
+                        x={xPos}
+                        y={yPos}
                         color={block} />
                 )
             })
         )
     }
 
-    console.log(state?.isGameOver);
+    function isOutsideField(x, y) {
+        const fieldWidth = 10;
+        const fieldHeight = 20;
+        return x < 1 || x > fieldWidth || y < 1 || y > fieldHeight;
+    }
+
     return (
-        <div className="__game-field-container">
-            <div className="__game-field">
+        <div className="game-field__container">
+            <div className="game-field">
                 <GameOverScreen isGameOver={state?.isGameOver} />
-                {renderActiveTetromino()}
                 {renderFixedBlocks()}
+                {renderActiveTetromino()}
             </div>
         </div>
     )

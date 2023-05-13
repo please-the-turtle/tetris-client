@@ -1,12 +1,12 @@
 @import "/src/vars";
 
-.__game-field-container {
+.game-field__container {
     position: relative;
     width: 100%;
     padding-top: 200%;
 }
 
-.__game-field {
+.game-field {
     background-color: $white;
     padding: .5%;
     border-radius: 2%/1%;
@@ -23,48 +23,4 @@
     gap: .5%;
     justify-content: stretch;
     align-content: stretch;
-}
-
-.__game-over-screen {
-    position: absolute;
-    z-index: 500;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: $textColorDark;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: inherit;
-    backdrop-filter: blur(10px);
-    transition: all 0.2s ease-in;
-
-    h1 {
-        transition: all .2s ease-out;
-        font-weight: 600;
-        font-style: italic;
-        text-shadow: #000000FF 5px 0 20px;
-        font-size: 2em;
-    }
-
-    button {
-        background: none;
-        padding: 0;
-        margin: 0;
-        font-size: 1.25em;
-        font-style: italic;
-    }
-}
-
-._hidden {
-    visibility: collapse;
-    backdrop-filter: none;
-    transition: all .2s ease-out;
-
-    h1 {
-        font-size: .5em;
-        transition: all .2s ease-out;
-    }
 }
