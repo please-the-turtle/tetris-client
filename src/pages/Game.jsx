@@ -4,6 +4,7 @@ import KeyboardTetrisController from "tetris-core/KeyboardTetrisController";
 import CenterContainer from "components/CenterContainer";
 import TetrisSessionContainer from "components/tetris/TetrisSessionContainer";
 import GesturesTetrisController from "tetris-core/GesturesTetrisController";
+import EventsTetrisController from "tetris-core/EventsTetrisController";
 
 export default function Game() {
     const refTetris = useRef();
@@ -17,6 +18,7 @@ export default function Game() {
         });
         KeyboardTetrisController(refTetris.current);
         GesturesTetrisController(refTetris.current);
+        EventsTetrisController(refTetris.current);
         tetris.start();
     }, [])
 
