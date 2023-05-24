@@ -1,0 +1,25 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="64" height="64" rx="10" fill="#171611"/>
+<g opacity="0.55">
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 3.11767 41.3351)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 50.1855)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 32.685)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 33.1177 41.5353)" stroke="#D9D9D9"/>
+</g>
+<g opacity="0.7">
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 3.11767 35.3351)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 44.1855)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 26.685)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 33.1177 35.5353)" stroke="#D9D9D9"/>
+</g>
+<g opacity="0.85">
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 3.11767 29.3351)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 38.1855)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 20.685)" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 33.1177 29.5353)" stroke="#D9D9D9"/>
+</g>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 3.11767 23.3351)" fill="#D9D9D9" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 32.1855)" fill="#D9D9D9" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 18.1177 14.685)" fill="#D9D9D9" stroke="#D9D9D9"/>
+<rect x="0.863773" width="15.3725" height="15.3725" rx="3.5" transform="matrix(0.863773 -0.503881 0.863773 0.503881 33.1177 23.5353)" fill="#D9D9D9" stroke="#D9D9D9"/>
+</svg>
