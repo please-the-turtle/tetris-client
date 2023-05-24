@@ -1,6 +1,7 @@
 import Block from "../Block";
 import "./TetrisPlayField.scss";
 import GameOverScreen from "../GameOverScreen";
+import StartGameScreen from "../StartGameScreen";
 
 export default function TetrisPlayField({ state }) {
 
@@ -42,6 +43,7 @@ export default function TetrisPlayField({ state }) {
     return (
         <div className="game-field__container">
             <div className="game-field">
+                <StartGameScreen isStarted={state?.isGameStarted}/>
                 <GameOverScreen isGameOver={state?.isGameOver} />
                 {renderFixedBlocks()}
                 {renderActiveTetromino()}

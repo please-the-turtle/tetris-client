@@ -13,13 +13,14 @@ export default function Game() {
     useEffect(() => {
         const tetris = Tetris('seed');
         refTetris.current = tetris;
+        
         refTetris.current.addStateListener(() => {
             setState(refTetris.current.state)
         });
+
         KeyboardTetrisController(refTetris.current);
         GesturesTetrisController(refTetris.current);
         EventsTetrisController(refTetris.current);
-        tetris.start();
     }, [])
 
     return (
