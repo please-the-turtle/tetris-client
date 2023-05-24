@@ -6,12 +6,12 @@ import TetrisSessionContainer from "components/tetris/TetrisSessionContainer";
 import GesturesTetrisController from "tetris-core/GesturesTetrisController";
 import EventsTetrisController from "tetris-core/EventsTetrisController";
 
-export default function Game() {
+export default function Singleplayer() {
     const refTetris = useRef();
     const [state, setState] = useState();
 
     useEffect(() => {
-        const tetris = Tetris('seed');
+        const tetris = Tetris(Date.now());
         refTetris.current = tetris;
         
         refTetris.current.addStateListener(() => {

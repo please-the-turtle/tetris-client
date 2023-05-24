@@ -6,7 +6,7 @@ import Home from "pages/Home";
 import PageNotFound from "pages/PageNotFound";
 import Login from "pages/Login";
 import Register from "pages/Register";
-import Game from "pages/Game";
+import Singleplayer from "pages/Singleplayer";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { Context } from "index";
 import { observer } from "mobx-react-lite";
@@ -36,7 +36,7 @@ function App() {
         <Routes>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="singleplayer" element={<Game />} />
+          <Route path="singleplayer" element={<Singleplayer />} />
           <Route path="*" element={<Login />} />
         </Routes>
       </div>
@@ -51,7 +51,7 @@ function App() {
       <main className="layout__body">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="game" element={<Game />} />
+          <Route path="singleplayer" element={<Singleplayer />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
