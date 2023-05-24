@@ -8,8 +8,6 @@ export default function GesturesTetrisController(tetris) {
     let isMoved = false;
 
     document.addEventListener("touchmove", event => {
-        if (tetris?.state?.isGameOver) return;
-
         const currentPosition = getCurrentTouchPosition(event);
         offset.x += lastTouchPosition.x - currentPosition.x;
         offset.y += lastTouchPosition.y - currentPosition.y;
@@ -35,8 +33,6 @@ export default function GesturesTetrisController(tetris) {
             isMoved = true;
             return;
         }
-
-        console.log(offset);
     }, false);
 
     document.addEventListener("touchstart", event => {

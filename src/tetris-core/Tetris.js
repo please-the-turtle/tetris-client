@@ -10,12 +10,16 @@ export default function Tetris(seed) {
     const softDropAcceleration = 3;
     let isSoftDrop = false;
     let isGameOver = false;
+    let isGameStarted = false;
     let activeTetromino = null;
     let nextTetromino = null;
     const listeners = [];
 
     function start() {
+        if (!isGameStoped()) return;
+
         reset();
+        isGameStarted = true;
         tick();
     }
 
@@ -23,7 +27,7 @@ export default function Tetris(seed) {
         update();
         moveTetrominoDown();
 
-        if (!isGameOver) {
+        if (!isGameStoped()) {
             setTimeout(() => tick(), getTickTime());
         }
     }
@@ -56,6 +60,8 @@ export default function Tetris(seed) {
     }
 
     function rotateTetromino(clockwise = true) {
+        if (isGameStoped()) return;
+
         activeTetromino.rotate(clockwise);
 
         if (field.hasCollision(activeTetromino)) {
@@ -66,6 +72,8 @@ export default function Tetris(seed) {
     }
 
     function moveTetrominoLeft() {
+        if (isGameStoped()) return;
+
         activeTetromino.x -= 1;
 
         if (field.hasCollision(activeTetromino)) {
@@ -76,6 +84,8 @@ export default function Tetris(seed) {
     }
 
     function moveTetrominoRight() {
+        if (isGameStoped()) return;
+
         activeTetromino.x += 1;
 
         if (field.hasCollision(activeTetromino)) {
@@ -86,7 +96,8 @@ export default function Tetris(seed) {
     }
 
     function moveTetrominoDown() {
-        if (isGameOver) return;
+        if (isGameStoped()) return;
+
         activeTetromino.y += 1;
 
         if (field.hasCollision(activeTetromino)) {
@@ -131,11 +142,17 @@ export default function Tetris(seed) {
     }
 
     function activateSoftDrop() {
+        if (isGameStoped()) return;
+
         isSoftDrop = true;
     }
 
     function cancelSoftDrop() {
         isSoftDrop = false;
+    }
+
+    function isGameStoped() {
+        return isGameOver || !isGameStarted;
     }
 
     function isFunction(item) {
@@ -153,6 +170,7 @@ export default function Tetris(seed) {
                 nextTetromino,
                 isSoftDrop,
                 isGameOver,
+                isGameStarted,
             };
         },
 
