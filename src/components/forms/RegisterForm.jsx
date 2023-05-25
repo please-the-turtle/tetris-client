@@ -8,19 +8,19 @@ import {
 } from "ariakit/form";
 import "./Form.scss"
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { Context } from "../../index";
+import { useState } from "react";
+import { useStore } from "store/useStore";
 
 export default function RegisterForm() {
     const form = useFormState({
         defaultValues: { username: "", password: "", passwordRepeat: "" },
     });
     const [registerErrorMessage, setRegisterErrorMessage] = useState(undefined);
-    const { store } = useContext(Context);
+    const register = useStore((state) => state.register);
     const navigate = useNavigate();
 
     form.useSubmit(() => {
-        store.register(form.values.username, form.values.password)
+        register(form.values.username, form.values.password)
             .then(() => navigate("/login"))
             .catch(error => {
                 setRegisterErrorMessage(error.response.data.message);

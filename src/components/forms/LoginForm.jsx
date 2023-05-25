@@ -8,17 +8,16 @@ import {
 } from "ariakit/form";
 import "./Form.scss"
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import { Context } from "../../index";
-import { observer } from "mobx-react-lite";
+import { useState } from "react";
+import { useStore } from "store/useStore";
 
 function LoginForm() {
     const form = useFormState({ defaultValues: { username: "", password: "" } });
     const [authErrorMessage, setAuthErrorMessage] = useState(undefined);
-    const { store } = useContext(Context);
+    const login = useStore((state) => state.login);
 
     form.useSubmit(() => {
-        store.login(form.values.username, form.values.password)
+        login(form.values.username, form.values.password)
             .catch(error => {
                 setAuthErrorMessage(error.response.data.message);
             });
@@ -26,7 +25,7 @@ function LoginForm() {
 
     return (
         <Form state={form} className="form">
-            <h1>{store.auth}</h1>
+            {/* <h1>{store.auth}</h1> */}
             <div>
                 <div className="form__field">
                     <FormLabel name={form.names.username}>Username:</FormLabel>
@@ -64,4 +63,4 @@ function LoginForm() {
     )
 }
 
-export default observer(LoginForm);
+export default LoginForm;

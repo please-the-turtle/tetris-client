@@ -1,31 +1,24 @@
-import { observable, action, makeAutoObservable } from "mobx";
 import AuthService from "services/AuthService";
 
-export default function Store() {
-    const authService = AuthService();
-    const authorized = observable({ value: false });
+const authService = AuthService();
 
-    function isAuthorized() {
-        return authorized.value;
-    };
+export const createAuthSlice = (set) => ({
 
-    const setAutorized = action(bool => {
-        authorized.value = bool;
-    });
+    isAuthorized: false,
 
-    async function login(username, password) {
+    login: async (username, password) => {
         try {
             const response = await authService.login(username, password);
             localStorage.setItem('token', response.data.accessToken);
-            setAutorized(true);
+            set(() => ({isAuthorized: true}));
             return response;
         } catch (e) {
             console.log(e.response?.data?.message);
             if (e.response) throw e;
         }
-    };
+    },
 
-    async function register(username, password) {
+    register: async (username, password) => {
         try {
             const response = await authService.register(username, password);
             return response;
@@ -33,36 +26,28 @@ export default function Store() {
             console.log(e.response?.data?.message);
             if (e.response) throw e;
         }
-    };
+    },
 
-    async function logout() {
+    logout: async () => {
         try {
             await authService.logout();
             localStorage.removeItem('token');
-            setAutorized(false);
+            set(() => ({isAuthorized: false}));
         } catch (e) {
             console.log(e.response?.data?.message)
         }
-    };
+    },
 
-    async function checkAuth() {
+    checkAuth: async () => {
         if (!localStorage.getItem('token')) {
             return;
         }
 
         try {
             await authService.refreshToken();
-            setAutorized(true);
+            set(() => ({isAuthorized: true}));
         } catch (e) {
             console.log(e.response?.data?.message)
         }
-    };
-
-    return makeAutoObservable({
-        isAuthorized,
-        register,
-        login,
-        checkAuth,
-        logout
-    });
-}
+    }
+})

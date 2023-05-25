@@ -7,18 +7,18 @@ import PageNotFound from "pages/PageNotFound";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import Singleplayer from "pages/Singleplayer";
-import { useCallback, useContext, useEffect, useState } from "react";
-import { Context } from "index";
-import { observer } from "mobx-react-lite";
+import { useCallback, useEffect, useState } from "react";
+import { useStore } from "store/useStore";
 
 function App() {
-  const { store } = useContext(Context);
+  const isAuthorized = useStore((state) => state.isAuthorized);
+  const checkAuth = useStore((state) => state.checkAuth);
   const [isLoading, setIsLoading] = useState(true);
 
   const authorize = useCallback(async () => {
-    await store.checkAuth()
+    await checkAuth()
       .finally(() => setIsLoading(false));
-  }, [store]);
+  }, [checkAuth]);
 
   useEffect(() => {
     authorize();
@@ -30,7 +30,7 @@ function App() {
     );
   }
 
-  if (!store.isAuthorized()) {
+  if (!isAuthorized) {
     return (
       <div className="layout">
         <Routes>
@@ -59,4 +59,4 @@ function App() {
   )
 };
 
-export default observer(App);
+export default App;
