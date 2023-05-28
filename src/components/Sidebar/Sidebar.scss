@@ -11,6 +11,7 @@
     text-shadow: black 0 0 15px;
     box-shadow: 
         inset rgba($color: white, $alpha: .1) 1px 1px,
+        inset rgba($color: black, $alpha: .1) -1px -1px,
         rgba($color: black, $alpha: .5) 5px 5px 20px;
     border-radius: 10px;
     position: relative;
