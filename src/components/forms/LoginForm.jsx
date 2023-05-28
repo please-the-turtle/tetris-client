@@ -7,7 +7,7 @@ import {
     useFormState,
 } from "ariakit/form";
 import "./Form.scss"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useStore } from "store/useStore";
 
@@ -15,9 +15,11 @@ function LoginForm() {
     const form = useFormState({ defaultValues: { username: "", password: "" } });
     const [authErrorMessage, setAuthErrorMessage] = useState(undefined);
     const login = useStore((state) => state.login);
+    const navigate = useNavigate();
 
     form.useSubmit(() => {
         login(form.values.username, form.values.password)
+            .then(() => navigate('/'))
             .catch(error => {
                 setAuthErrorMessage(error.response.data.message);
             });
