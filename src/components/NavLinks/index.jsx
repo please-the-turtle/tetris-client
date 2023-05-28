@@ -19,8 +19,8 @@ export default function NavLinks({className}) {
             cName: "navigation__item"
         },
         {
-            title: "game",
-            path: "game",
+            title: "singleplayer",
+            path: "singleplayer",
             cName: "navigation__item"
         },
     ];
