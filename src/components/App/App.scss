@@ -1,6 +1,8 @@
 @import "/src/_vars";
 
 .layout {
+    display: flex;
+    flex-direction: column;
     max-width: 1440px;
     overflow: visible;
     width: 100%;
@@ -19,9 +21,8 @@
 
 .layout__header {
     padding: 10px 25px;
-    position: absolute;
+    position: relative;
     z-index: 600;
-    max-height: 30px;
     top: 0;
     bottom: 0;
     left: 0;
