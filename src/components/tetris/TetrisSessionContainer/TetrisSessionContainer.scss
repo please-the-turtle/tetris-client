@@ -2,19 +2,18 @@
     display: grid;
     grid-auto-flow: row;
     gap: 6px;
-    height: 80vh;
-    width: 60vh;
-    grid-template-columns: 2fr 1fr;
+    width: 55vh;
+    grid-template-columns: 3fr 1fr;
 
     -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
 }
 
-@media (max-aspect-ratio: 1/1.6) {
+@media (max-aspect-ratio: 1/1.7) {
     .game-container {
-        height: 121vw;
-        width: 91vw;
+        width: 95vw;
+        height: auto;
     }
 }
 
