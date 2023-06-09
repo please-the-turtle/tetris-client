@@ -2,7 +2,7 @@
 
 .card-container {
     position: relative;
-    background-color: $bgColorLight;
+    background-color: $darkGrey;
     width: 100%;
     padding-top: 100%;
     border-radius: 4%;
@@ -25,6 +25,7 @@
 .card-header {
     color: $textColorGrey;
     font-size: 1.3em;
+    font-weight: bold;
     position: absolute;
     display: flex;
     justify-content: flex-end;

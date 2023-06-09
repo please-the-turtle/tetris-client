@@ -55,7 +55,7 @@ function LoginForm() {
                     className="form__field__error-message" />
             </div>
             {authErrorMessage && <div className="form__error-message">
-                {authErrorMessage}
+                🙀 {authErrorMessage}
             </div>}
             <div className="form__buttons-container">
                 <Link to="/register">register new</Link>

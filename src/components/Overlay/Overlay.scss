@@ -7,7 +7,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    color: $textColorDark;
+    color: $textColorLight;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -15,12 +15,12 @@
     border-radius: inherit;
     backdrop-filter: blur(10px);
     transition: all 0.2s ease-in;
+    text-shadow: #000000FF 5px 0 10px;
 
     h1 {
         transition: all .2s ease-out;
         font-weight: 600;
         font-style: italic;
-        text-shadow: #000000FF 5px 0 20px;
         font-size: 3.5em;
 
         button {
@@ -33,11 +33,13 @@
         padding: 0;
         margin: 0;
         font-size: 2.25em;
+        color: $textColorLight;
+        text-shadow: #000000FF 5px 0 10px;
     }
 }
 
 ._hidden {
-    visibility: collapse;
+    visibility: hidden;
     backdrop-filter: none;
     transition: all .2s ease-out;
 

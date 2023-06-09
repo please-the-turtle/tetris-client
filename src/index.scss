@@ -10,6 +10,11 @@ body {
     touch-action: none;
 }
 
+input {
+    background-color: $darkGrey;
+    color: $textColorLight;
+}
+
 #root {
     height: 100%;
 }

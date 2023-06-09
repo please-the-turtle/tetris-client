@@ -72,7 +72,7 @@ export default function RegisterForm() {
                 name={form.names.passwordRepeat}
                 className="form__field__error-message" />
             {registerErrorMessage && <div className="form__error-message">
-                {registerErrorMessage}
+                🙀 {registerErrorMessage}
             </div>}
             <div className="form__buttons-container">
                 <Link to="/login">login now</Link>
