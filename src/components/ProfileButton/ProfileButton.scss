@@ -1,0 +1,41 @@
+@import '/src/vars';
+
+.button {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    display: flex;
+    align-items: center;
+
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.5em;
+
+    &:active,
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.menu-item {
+    font-size: 1.25em;
+    text-shadow: black 0 0 15px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    background-color: rgba(46, 46, 46, 0.25);
+    text-shadow: black 0 0 15px;
+    box-shadow: 
+        inset rgba($color: white, $alpha: .1) 1px 1px,
+        inset rgba($color: black, $alpha: .1) -1px -1px,
+        rgba($color: black, $alpha: .5) 5px 5px 20px;
+    border-radius: 10px;
+    z-index: 600;
+}

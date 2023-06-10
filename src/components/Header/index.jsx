@@ -6,7 +6,7 @@ import { IoClose, IoMenu } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import NavLinks from '../NavLinks';
 import Sidebar from '../Sidebar';
-import LogoutButton from '../LogoutButton';
+import ProfileButton from '../ProfileButton';
 import { Button } from 'ariakit';
 
 export default function Header() {
@@ -27,7 +27,7 @@ export default function Header() {
                         </Sidebar>
                     </div>
                 )}
-                <LogoutButton />
+                <ProfileButton />
             </IconContext.Provider>
         </header>
     )
