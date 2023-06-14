@@ -27,7 +27,6 @@ function LoginForm() {
 
     return (
         <Form state={form} className="form">
-            {/* <h1>{store.auth}</h1> */}
             <div>
                 <div className="form__field">
                     <FormLabel name={form.names.username}>Username:</FormLabel>

@@ -5,12 +5,17 @@ const authService = AuthService();
 export const createAuthSlice = (set) => ({
 
     isAuthorized: false,
+    username: null,
 
     login: async (username, password) => {
         try {
             const response = await authService.login(username, password);
             localStorage.setItem('token', response.data.accessToken);
-            set(() => ({isAuthorized: true}));
+            const payload = getPayloadFromToken(response.data?.accessToken);
+            set(() => ({
+                isAuthorized: true,
+                username: payload?.sub
+            }));
             return response;
         } catch (e) {
             console.log(e.response?.data?.message);
@@ -32,7 +37,10 @@ export const createAuthSlice = (set) => ({
         try {
             await authService.logout();
             localStorage.removeItem('token');
-            set(() => ({isAuthorized: false}));
+            set(() => ({
+                isAuthorized: false,
+                username: null
+            }));
         } catch (e) {
             console.log(e.response?.data?.message)
         }
@@ -51,3 +59,9 @@ export const createAuthSlice = (set) => ({
         }
     }
 })
+
+function getPayloadFromToken(token) {
+    const payload = token.split('.')[1];
+    const payloadDecoded = atob(payload);
+    return JSON.parse(payloadDecoded);  
+}

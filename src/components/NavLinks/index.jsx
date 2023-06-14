@@ -9,18 +9,13 @@ export default function NavLinks({className}) {
             cName: "navigation__item navigation__item_bold"
         },
         {
-            title: "friends",
-            path: "friends",
-            cName: "navigation__item"
-        },
-        {
-            title: "statistics",
-            path: "statistics",
-            cName: "navigation__item"
-        },
-        {
             title: "singleplayer",
             path: "singleplayer",
+            cName: "navigation__item"
+        },
+        {
+            title: "leaderboard",
+            path: "leaderboard",
             cName: "navigation__item"
         },
     ];

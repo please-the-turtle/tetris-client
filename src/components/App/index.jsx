@@ -9,6 +9,7 @@ import Register from "pages/Register";
 import Singleplayer from "pages/Singleplayer";
 import { useCallback, useEffect, useState } from "react";
 import { useStore } from "store/useStore";
+import Leaderboard from "pages/Leaderboard";
 
 function App() {
   const isAuthorized = useStore((state) => state.isAuthorized);
@@ -52,6 +53,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="singleplayer" element={<Singleplayer />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
