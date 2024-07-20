@@ -12,14 +12,14 @@
     margin: 0 auto;
 }
 
-.layout__body {
+.page {
     display: flex;
     position: relative;
     padding: 0 25px;
     height: 100%;
 }
 
-.layout__header {
+.header {
     padding: 10px 25px;
     position: relative;
     z-index: 600;

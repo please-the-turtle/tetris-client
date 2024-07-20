@@ -6,7 +6,7 @@ nav {
     gap: 14px;
 }
 
-.navigation__item {
+.navigation-item {
     display: flex;
     flex-direction: row;
     text-decoration: none;
@@ -14,6 +14,6 @@ nav {
     color: $textColorLight;
 }
 
-.navigation__item_bold {
+.bold {
     font-weight: 700;
 }

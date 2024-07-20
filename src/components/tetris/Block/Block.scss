@@ -1,6 +1,6 @@
 @import "/src/vars";
 
-.__block {
+.block {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -9,30 +9,30 @@
     border-radius: 15%;
 }
 
-._block-color_blue {
+.blue {
     background-color: $blue;
 }
 
-._block-color_red {
+.red {
     background-color: $red;
 }
 
-._block-color_orange {
+.orange {
     background-color: $orange;
 }
 
-._block-color_green {
+.green {
     background-color: $green;
 }
 
-._block-color_purple {
+.purple {
     background-color: $purple;
 }
 
-._block-color_yellow {
+.yellow {
     background-color: $yellow;
 }
 
-._block-color_marin {
+.marin {
     background-color: $marin;
 }

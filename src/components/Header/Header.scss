@@ -8,13 +8,13 @@ header {
     align-items: stretch;
 }
 
-.header__navigation {
+.navigation {
     display: flex;
     gap: 16px;
     flex-direction: row;
 }
 
-.sidebar__button {
+.sidebar-button {
     padding: 0;
     margin: 0;
     gap: 0;

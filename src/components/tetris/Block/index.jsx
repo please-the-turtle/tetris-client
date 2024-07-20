@@ -5,7 +5,7 @@ import "./Block.scss"
  */
 export default function Block({ x, y, color }) {
     return (
-        <div key={11 - x + y} className={"__block _block-color_" + color}
+        <div key={11 - x + y} className={"block " + color}
             style={{
                 gridColumn: x,
                 gridRow: y

@@ -10,10 +10,10 @@ export default function App() {
   return (
     <Router>
     <div className="layout">
-      <div className="layout__header">
+      <div className="header">
         <Header />
       </div>
-      <main className="layout__body">
+      <main className="page">
 
           <Routes>
             <Route path="/" element={<Home />} />

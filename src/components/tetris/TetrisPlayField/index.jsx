@@ -41,7 +41,7 @@ export default function TetrisPlayField({ state }) {
     }
 
     return (
-        <div className="game-field__container">
+        <div className="game-field-container">
             <div className="game-field">
                 <StartGameScreen isStarted={state?.isGameStarted}/>
                 <GameOverScreen isGameOver={state?.isGameOver} />

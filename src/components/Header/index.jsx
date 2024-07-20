@@ -15,9 +15,9 @@ export default function Header() {
     return (
         <header>
                 {(windowSize.width > 480) ? (
-                    <NavLinks className='header__navigation' />) : (
+                    <NavLinks className='navigation' />) : (
                     <div>
-                        <Button className='sidebar__button' onClick={sidebar.toggle}>
+                        <Button className='sidebar-button' onClick={sidebar.toggle}>
                             {sidebar.state ? <img src={CloseIcon} alt="Close menu" className='close-icon' />
                                 : <img src={MenuIcon} alt="Open menu" className='menu-icon' />}
 

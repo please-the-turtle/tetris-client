@@ -6,17 +6,17 @@ export default function NavLinks({ className }) {
         {
             title: "Home",
             path: "/",
-            cName: "navigation__item navigation__item_bold"
+            cName: "navigation-item bold"
         },
         {
             title: "singleplayer",
             path: "singleplayer",
-            cName: "navigation__item"
+            cName: "navigation-item"
         },
         {
             title: "leaderboard",
             path: "leaderboard",
-            cName: "navigation__item"
+            cName: "navigation-item"
         },
     ];
 
