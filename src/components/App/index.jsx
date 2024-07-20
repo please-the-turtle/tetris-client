@@ -13,8 +13,7 @@ export default function App() {
       <div className="header">
         <Header />
       </div>
-      <main className="page">
-
+      <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="singleplayer" element={<Singleplayer />} />
