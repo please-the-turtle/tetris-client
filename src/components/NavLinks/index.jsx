@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './NavLinks.scss';
 
-export default function NavLinks({className}) {
+export default function NavLinks({ className }) {
     const navLinksData = [
         {
             title: "Home",

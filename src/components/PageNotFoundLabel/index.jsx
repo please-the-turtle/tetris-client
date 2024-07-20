@@ -1,8 +1,8 @@
-import CenterContainer from "../../components/CenterContainer"
+import CenterContainer from "../CenterContainer"
 import detective from "./detective_3d_default.png"
-import "./PageNotFound.scss";
+import "./PageNotFoundLabel.scss";
 
-export default function PageNotFound() {
+export default function PageNotFoundLabel() {
     return (
         <CenterContainer>
             <div className="page-not-found-content">

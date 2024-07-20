@@ -1,4 +1,4 @@
-import SquareCard from "components/SquareCard"
+import SquareCard from "../../SquareCard"
 import "./TetrisNextTetrominoCard.scss"
 import Block from "../Block"
 

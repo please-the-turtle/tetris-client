@@ -1,6 +1,6 @@
-import Overlay from "components/Overlay";
-import TetrisGameEvent from "tetris-core/TetrisGameEvent";
-import TetrisGameEventActions from "tetris-core/TetrisGameEventActions";
+import Overlay from "../Overlay";
+import TetrisGameEvent from "../../tetris-core/TetrisGameEvent";
+import TetrisGameEventActions from "../../tetris-core/TetrisGameEventActions";
 
 export default function StartGameScreen({ isStarted }) {
     return (

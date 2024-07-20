@@ -1,4 +1,4 @@
-import SquareCard from "components/SquareCard"
+import SquareCard from "../../SquareCard"
 import "./TetrisLevelCounter.scss"
 
 export default function TetrisLevelCounter({ levelCount = 0 }) {
