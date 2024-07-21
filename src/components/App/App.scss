@@ -17,7 +17,7 @@ main {
     position: relative;
     padding: 0 25px;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .header {
@@ -32,8 +32,8 @@ main {
 
 body {
     background: $bgColorDark;
-    background: 
-        radial-gradient(circle at 10% 10%, rgba(170, 232, 137, 0.2) 0%, rgba(125, 170, 255, 0.2) 40%, rgba(0, 0, 0, 0) 60%), 
+    background:
+        radial-gradient(circle at 10% 10%, rgba(170, 232, 137, 0.2) 0%, rgba(125, 170, 255, 0.2) 40%, rgba(0, 0, 0, 0) 60%),
         radial-gradient(circle at bottom right, rgba(250, 180, 130, 0.2) 0%, rgba(245, 115, 115, 0.2) 40%, rgba(0, 0, 0, 0) 60%),
         $bgColorDark;
 }
