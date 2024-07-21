@@ -1,21 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './NavLinks.scss';
 
 export default function NavLinks({ className }) {
+    const location = useLocation();
     const navLinksData = [
         {
-            title: "Home",
+            title: "Multiplayer",
             path: "/",
-            cName: "navigation-item bold"
-        },
-        {
-            title: "singleplayer",
-            path: "singleplayer",
             cName: "navigation-item"
         },
         {
-            title: "leaderboard",
-            path: "leaderboard",
+            title: "singleplayer",
+            path: "/singleplayer",
+            cName: "navigation-item"
+        },
+        {
+            title: "statistics",
+            path: "/statistics",
             cName: "navigation-item"
         },
     ];
@@ -24,7 +25,9 @@ export default function NavLinks({ className }) {
         <nav className={className}>
             {navLinksData.map((item, index) => {
                 return (
-                    <Link key={index} to={item.path} className={item.cName}>
+                    <Link key={index} 
+                        to={item.path} 
+                        className={(item.path === location.pathname) ? item.cName + ' bold' : item.cName}>
                         {item.title}
                     </Link>
                 )

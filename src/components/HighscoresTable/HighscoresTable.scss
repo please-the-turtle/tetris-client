@@ -1,6 +1,6 @@
 @import "/src/_vars";
 
-.leaderboard {
+.highscores {
     position: absolute;
     left: 50%;
     top: 10%;
@@ -12,12 +12,12 @@
 }
 
 @media (max-aspect-ratio: 1/1.7) {
-    .leaderboard {
+    .highscores {
         font-size: 5.5vw;
     }
 }
 
-.leaderboard-header {
+.highscores-header {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -51,7 +51,7 @@
     }
 }
 
-.leaderboard-table {
+.highscores-table {
     width: 17em;
     height: 50vh;
 }

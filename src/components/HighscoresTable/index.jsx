@@ -1,13 +1,13 @@
-import "./LeaderboardTable.scss"
+import "./HighscoresTable.scss"
 
-export default function LeaderboardTable() {
+export default function HighscoresTable() {
 
     return (
-        <section className="leaderboard">
-            <article className="leaderboard-header">
-                <h1>🎯 Leaderboard</h1>
+        <section className="highscores">
+            <article className="highscores-header">
+                <h1>🎯 Highscores</h1>
             </article>
-            <article className="leaderboard-table">
+            <article className="highscores-table">
             </article>
         </section>
     )

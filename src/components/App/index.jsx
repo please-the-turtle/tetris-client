@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../Header";
-import Home from "../../pages/Home";
 import PageNotFound from "../../pages/PageNotFound";
 import Singleplayer from "../../pages/Singleplayer";
-import Leaderboard from "../../pages/Leaderboard";
+import Statistics from "../../pages/Statistics";
+import Multiplayer from "../../pages/Multiplayer"
 import "./App.scss";
 
 export default function App() {
@@ -15,9 +15,9 @@ export default function App() {
       </div>
       <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Multiplayer />} />
             <Route path="singleplayer" element={<Singleplayer />} />
-            <Route path="leaderboard" element={<Leaderboard />} />
+            <Route path="statistics" element={<Statistics />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
       </main>
