@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { updateStatistics } from "../services/statisticsService"
 import Tetris from "../tetris-core/Tetris";
 import KeyboardTetrisController from "../tetris-core/KeyboardTetrisController";
 import CenterContainer from "../components/CenterContainer";
@@ -11,12 +12,15 @@ export default function Singleplayer() {
     const [state, setState] = useState();
 
     useEffect(() => {
-        const tetris = Tetris(Date.now());
-        refTetris.current = tetris;
+        refTetris.current = Tetris(Date.now());
         
         refTetris.current.addListener('statechanged', () => {
             setState(refTetris.current.state)
         });
+
+        refTetris.current.addListener('gameover', () => {
+            updateStatistics(refTetris.current.state.score)
+        })
 
         KeyboardTetrisController(refTetris.current);
         GesturesTetrisController(refTetris.current);

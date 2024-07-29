@@ -131,8 +131,10 @@ export default function Tetris(seed) {
         switch (eventName){
             case 'statechanged':
                 stateListeners.push(callback)
+                break;
             case 'gameover':
                 gameOverListeners.push(callback)
+                break;
             default:
                 console.error("invalid event name", eventName)
         }
