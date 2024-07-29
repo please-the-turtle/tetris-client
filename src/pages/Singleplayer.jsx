@@ -14,7 +14,7 @@ export default function Singleplayer() {
         const tetris = Tetris(Date.now());
         refTetris.current = tetris;
         
-        refTetris.current.addStateListener(() => {
+        refTetris.current.addListener('statechanged', () => {
             setState(refTetris.current.state)
         });
 

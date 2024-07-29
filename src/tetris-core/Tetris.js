@@ -13,7 +13,8 @@ export default function Tetris(seed) {
     let isGameStarted = false;
     let activeTetromino = null;
     let nextTetromino = null;
-    const listeners = [];
+    const stateListeners = [];
+    const gameOverListeners = [];
 
     function start() {
         if (!isGameStoped()) return;
@@ -42,6 +43,7 @@ export default function Tetris(seed) {
         if (field.hasCollision(activeTetromino)) {
             isGameOver = true;
             onStateChanged();
+            onGameOver();
         }
     }
 
@@ -125,16 +127,36 @@ export default function Tetris(seed) {
         activeTetromino.y = -1;
     }
 
-    function addStateListener(onStateChanged) {
-        listeners.push(onStateChanged);
+    function addListener(eventName, callback) {
+        switch (eventName){
+            case 'statechanged':
+                stateListeners.push(callback)
+            case 'gameover':
+                gameOverListeners.push(callback)
+            default:
+                console.error("invalid event name", eventName)
+        }
     }
 
-    function removeStateListener(listener) {
-        listeners.filter(item => item !== listener);
+    function removeListener(eventName, callback) {
+        switch (eventName){
+            case 'statechanged':
+                stateListeners.filter(item => item !== callback);
+            case 'gameover':
+                gameOverListeners.filter(item => item !== callback);
+        }
     }
 
     function onStateChanged() {
-        listeners.forEach(listener => {
+        stateListeners.forEach(listener => {
+            if (isFunction(listener)) {
+                listener.call();
+            }
+        });
+    }
+
+    function onGameOver() {
+        gameOverListeners.forEach(listener => {
             if (isFunction(listener)) {
                 listener.call();
             }
@@ -174,8 +196,8 @@ export default function Tetris(seed) {
             };
         },
 
-        addStateListener,
-        removeStateListener,
+        addListener: addListener,
+        removeListener: removeListener,
 
         moveTetrominoDown,
         moveTetrominoLeft,
