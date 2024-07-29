@@ -8,6 +8,8 @@ export default function GesturesTetrisController(tetris) {
     let isMoved = false;
 
     document.addEventListener("touchmove", event => {
+        event.preventDefault();
+
         const currentPosition = getCurrentTouchPosition(event);
         offset.x += lastTouchPosition.x - currentPosition.x;
         offset.y += lastTouchPosition.y - currentPosition.y;
@@ -33,24 +35,24 @@ export default function GesturesTetrisController(tetris) {
             isMoved = true;
             return;
         }
-    }, false);
+    }, { passive: false });
 
     document.addEventListener("touchstart", event => {
         lastTouchPosition = getCurrentTouchPosition(event)
         offset = Point2d(0, 0);
         isMoved = false;
-    }, false)
+    })
 
     document.addEventListener("touchend", () => {
         if (!isMoved) {
             tetris.rotateTetromino();
         }
-    }, false)
+    })
 
     document.addEventListener("touchcancel", () => {
         offset = Point2d(0, 0);
         isMoved = false;
-    }, false)
+    })
 
     function getCurrentTouchPosition(touchEvent) {
         return touchEvent && Point2d(

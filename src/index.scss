@@ -8,6 +8,9 @@ body {
     color: $textColorLight;
     height: 100%;
     touch-action: none;
+
+    // Prevents pull down to refresh
+    overscroll-behavior-y: contain;
 }
 
 input {
