@@ -1,20 +1,8 @@
 @import "/src/_vars";
 
 .highscores {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    align-items: center;
-    justify-content: center;
     display: flex;
     flex-direction: column;
-    transform: translate(-50%, 0);
-}
-
-@media (max-aspect-ratio: 1/1.7) {
-    .highscores {
-        font-size: 5.5vw;
-    }
 }
 
 .highscores-header {
@@ -24,7 +12,6 @@
     width: 100%;
     font-size: 1.5em;
     align-items: center;
-    line-height: 0;
     margin-bottom: .5em;
 
     button {
@@ -52,8 +39,7 @@
 }
 
 .highscores-table {
-    width: 17em;
-    height: 50vh;
+    width: 100%;
 }
 
 .score-line {
@@ -67,22 +53,12 @@
     padding: 5px .5em;
     line-height: 1em;
     border-radius: 6px;
-    transition: all .5s ease-out;
-    
-    &:hover {
-        transition: all .5s ease-in;
-        background-color: #FFF2;
-    }
 }
 
 .score-line-position-number {
     text-align: center;
+    font-weight: 600;
     min-width: 1.5em;
-}
-
-.score-line-username {
-    text-align: left;
-    width: 70%;
 }
 
 .score-line-score {
