@@ -1,6 +1,6 @@
 @import "/src/vars";
 
-.card-container {
+.square-card-container {
     position: relative;
     background-color: $darkGrey;
     width: 100%;
@@ -8,7 +8,7 @@
     border-radius: 4%;
 }
 
-.card-content {
+.square-card-content {
     position: absolute;
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@
     margin: 18%;
 }
 
-.card-header {
+.square-card-header {
     color: $textColorGrey;
     font-size: 1.3em;
     font-weight: bold;

@@ -2,11 +2,11 @@ import "./SquareCard.scss"
 
 export default function SquareCard({ children, header = "" }) {
     return (
-        <div className="card-container">
-            <div className="card-content">
+        <div className="square-card-container">
+            <div className="square-card-content">
                 {children}
             </div>
-            <div className="card-header">
+            <div className="square-card-header">
                 {header}
             </div>
         </div>

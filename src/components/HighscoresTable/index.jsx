@@ -1,23 +1,33 @@
 import "./HighscoresTable.scss"
 
-export default function HighscoresTable({scores}) {
+export default function HighscoresTable({ scores }) {
     return (
         <section className="highscores">
             <article className="highscores-header">
-                <h1>🎯 Highscores:</h1>
+                🎯 Highscores:
             </article>
             <article className="highscores-table">
-                {scores?.map((scoreRecord, i) => {
-                    const numberChar = getNumberChar(i);
-                    return (
-                        <div key={i} className="score-line">
-                            <div className="score-line-position-number">{numberChar}</div>
-                            <div className="score-line-score">{scoreRecord}</div>
-                        </div>)
-                })}
+                {drawRecordsList(scores)}
             </article>
         </section>
     )
+}
+
+function drawRecordsList(scores) {
+    if (!scores || scores.length < 1) {
+        return (
+            <div className="score-line message">There are no records</div>
+        )
+    }
+
+    return scores?.map((scoreRecord, i) => {
+        const numberChar = getNumberChar(i);
+        return (
+            <div key={i} className="score-line">
+                <div className="score-line-position-number">{numberChar}</div>
+                <div className="score-line-score">{scoreRecord}</div>
+            </div>)
+    })
 }
 
 function getNumberChar(number) {

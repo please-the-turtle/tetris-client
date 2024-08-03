@@ -1,0 +1,40 @@
+@import "/src/vars";
+
+$card-container-bradius: 10px;
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    backdrop-filter: blur(4px);
+    background-color: rgba(46, 46, 46, 0.25);
+    text-shadow: black 0 0 10px;
+    box-shadow:
+        inset rgba($color: white, $alpha: .1) 1px 1px,
+        inset rgba($color: black, $alpha: .1) -1px -1px,
+        rgba($color: black, $alpha: .5) 5px 5px 20px;
+    border-radius: $card-container-bradius;
+    min-width: 400px;
+}
+
+.card-header {
+    border-radius: 0 $card-container-bradius $card-container-bradius 0;
+    font-size: 1.5em;
+    background-color: rgba($color: $white, $alpha: .1);
+    width: 1.25em;
+    writing-mode: vertical-lr;
+    rotate: 180deg;
+    text-align: center;
+    align-content: center;
+}
+
+.card-body {
+    margin: .5em;
+    width: 100%;
+}
+
+@media (max-aspect-ratio: 1/1.7) {
+    .card-container {
+        font-size: 5.5vw;
+        min-width: 100%;
+    }
+}

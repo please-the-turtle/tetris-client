@@ -1,9 +1,3 @@
-.statistics {
-    display: flex;
-    flex-direction: column;
-    max-width: 40%;
-}
-
 .statistics-line {
     display: flex;
     flex-direction: row;
@@ -11,21 +5,18 @@
     text-align: left;
     width: 100%;
     gap: 1em;
-    align-items:end;
+    align-items: end;
+    justify-content: space-between;
+    font-weight: 200;
 }
 
 .statistics-line-header {
-    font-weight: 600;
     height: 100%;
     text-wrap: nowrap;
 }
 
 .statistics-line-value {
-    height: 100%;
-}
-
-@media (max-aspect-ratio: 1/1.7) {
-    .container {
-        font-size: 5.5vw;
-    }
+    text-align: center;
+    align-items: center;
+    align-content: end;
 }
