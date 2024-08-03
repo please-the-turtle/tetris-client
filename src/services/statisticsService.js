@@ -7,6 +7,7 @@ export function updateStatistics(newScore, isMultiplayer = false) {
     statistics.gamesCount += 1;
     statistics.scoresSum += newScore;
     statistics.avgScore = statistics.scoresSum / statistics.gamesCount;
+    statistics.avgScore = +statistics.avgScore.toFixed(2);
     addNewScore(statistics.scores, newScore);
 
     const value = JSON.stringify(statistics);
@@ -45,7 +46,7 @@ function addNewScore(scores, newScore) {
     }
 
     scores.push(newScore);
-    scores.sort(function (a, b) { return a - b });
+    scores.sort(function (a, b) { return b - a });
     if (scores.length > scoresCapacity) {
         scores.slice(0, scoresCapacity);
     }
