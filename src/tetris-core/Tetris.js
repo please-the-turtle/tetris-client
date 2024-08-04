@@ -24,6 +24,12 @@ export default function Tetris(seed) {
         tick();
     }
 
+    function dispose() {
+        stateListeners.length = 0;
+        gameOverListeners.length = 0;
+        console.log('disposed')
+    }
+
     function tick() {
         update();
         moveTetrominoDown();
@@ -209,5 +215,6 @@ export default function Tetris(seed) {
         cancelSoftDrop,
         start,
         reset,
+        dispose,
     }
 }

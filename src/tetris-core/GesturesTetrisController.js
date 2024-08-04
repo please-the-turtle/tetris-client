@@ -7,7 +7,7 @@ export default function GesturesTetrisController(tetris) {
     let offset = Point2d(0, 0);
     let isMoved = false;
 
-    document.addEventListener("touchmove", event => {
+    const ontouchmove = (event) => {
         event.preventDefault();
 
         const currentPosition = getCurrentTouchPosition(event);
@@ -35,29 +35,45 @@ export default function GesturesTetrisController(tetris) {
             isMoved = true;
             return;
         }
-    }, { passive: false });
+    };
 
-    document.addEventListener("touchstart", event => {
+    const ontouchstart = (event) => {
         lastTouchPosition = getCurrentTouchPosition(event)
         offset = Point2d(0, 0);
         isMoved = false;
-    })
+    };
 
-    document.addEventListener("touchend", () => {
+    const ontouchend = () => {
         if (!isMoved) {
             tetris.rotateTetromino();
         }
-    })
+    };
 
-    document.addEventListener("touchcancel", () => {
+    const ontouchcancel = () => {
         offset = Point2d(0, 0);
         isMoved = false;
-    })
+    };
+
+    const dispose = () => {
+        document.removeEventListener("touchmove", ontouchmove);
+        document.removeEventListener("touchstart", ontouchstart);
+        document.removeEventListener("touchend", ontouchend);
+        document.removeEventListener("touchcancel", ontouchcancel);
+    }
+
+    document.addEventListener("touchmove", ontouchmove, { passive: false });
+    document.addEventListener("touchstart", ontouchstart);
+    document.addEventListener("touchend", ontouchend);
+    document.addEventListener("touchcancel", ontouchcancel);
 
     function getCurrentTouchPosition(touchEvent) {
         return touchEvent && Point2d(
             touchEvent.touches[0].pageX,
             touchEvent.touches[0].pageY
         );
+    }
+
+    return {
+        dispose,
     }
 }

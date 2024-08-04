@@ -1,5 +1,5 @@
 export default function KeyboardTetrisController(tetris) {
-    document.addEventListener('keydown', (event) => {
+    const onkeydown = (event) => {
         switch (event.code) {
             case 'Enter':
                 tetris.start();
@@ -24,10 +24,10 @@ export default function KeyboardTetrisController(tetris) {
                 }
                 break;
             default: break;
-        };
-    })
+        }
+    };
 
-    document.addEventListener('keyup', (event) => {
+    const onkeyup = (event) => {
         switch (event.code) {
             case 'ArrowDown':
             case 'KeyS':
@@ -35,5 +35,17 @@ export default function KeyboardTetrisController(tetris) {
                 break;
             default: break;
         }
-    })
+    };
+
+    document.addEventListener('keydown', onkeydown)
+    document.addEventListener('keyup', onkeyup)
+
+    const dispose = () => {
+        document.removeEventListener('keydown', onkeydown)
+        document.removeEventListener('keyup', onkeyup)
+    } 
+
+    return {
+        dispose,
+    }
 } 

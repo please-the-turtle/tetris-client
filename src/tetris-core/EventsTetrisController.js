@@ -1,7 +1,7 @@
 import TetrisGameEventActions from "./TetrisGameEventActions";
 
 export default function EventsTetrisController(tetris, id = 0) {
-    document.addEventListener('tetris', (event) => {
+    const ontetrisevent = (event) => {
         if (event.detail.controllerId !== id) {
             return;
         }
@@ -33,5 +33,15 @@ export default function EventsTetrisController(tetris, id = 0) {
                 break;
             default: break;
         }
-    })
+    }
+
+    const dispose = () => {
+        document.removeEventListener('tetris', ontetrisevent)
+    }
+
+    document.addEventListener('tetris', ontetrisevent)
+
+    return {
+        dispose,
+    }
 }

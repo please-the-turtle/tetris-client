@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { updateStatistics } from "../services/statisticsService"
 import Tetris from "../tetris-core/Tetris";
 import KeyboardTetrisController from "../tetris-core/KeyboardTetrisController";
@@ -8,23 +8,33 @@ import GesturesTetrisController from "../tetris-core/GesturesTetrisController";
 import EventsTetrisController from "../tetris-core/EventsTetrisController";
 
 export default function Singleplayer() {
-    const refTetris = useRef();
     const [state, setState] = useState();
 
     useEffect(() => {
-        refTetris.current = Tetris(Date.now());
-        
-        refTetris.current.addListener('statechanged', () => {
-            setState(refTetris.current.state)
+        let tetris = Tetris(Date.now());
+        let kbController = KeyboardTetrisController(tetris);
+        let gesturesController = GesturesTetrisController(tetris);
+        let eventsController = EventsTetrisController(tetris);
+
+        tetris.addListener('statechanged', () => {
+            setState(tetris.state)
         });
 
-        refTetris.current.addListener('gameover', () => {
-            updateStatistics(refTetris.current.state.score)
+        tetris.addListener('gameover', () => {
+            updateStatistics(tetris.state.score)
         })
 
-        KeyboardTetrisController(refTetris.current);
-        GesturesTetrisController(refTetris.current);
-        EventsTetrisController(refTetris.current);
+        return () => {
+            kbController.dispose();
+            kbController = null;
+            gesturesController.dispose();
+            gesturesController = null;
+            eventsController.dispose();
+            eventsController = null;
+
+            tetris.dispose();
+            tetris = null;
+        }
     }, [])
 
     return (
