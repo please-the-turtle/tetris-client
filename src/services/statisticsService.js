@@ -16,13 +16,8 @@ export function updateStatistics(newScore, isMultiplayer = false) {
 
 export function getStatistics(isMultiplayer = false) {
     const key = isMultiplayer ? 'multiplayer' : 'singleplayer';
-    let statistics;
-    try {
-        statistics = JSON.parse(localStorage.getItem(key));
-    }
-    catch {
-        statistics = null;
-    }
+    let statistics = JSON.parse(localStorage.getItem(key));
+
     if (!statistics) {
         statistics = {
             gamesCount: 0,
