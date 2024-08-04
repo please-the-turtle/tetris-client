@@ -45,6 +45,10 @@ function addNewScore(scores, newScore) {
         return;
     }
 
+    if (scores.includes(newScore)) {
+        return;
+    }
+
     scores.push(newScore);
     scores.sort(function (a, b) { return b - a });
     if (scores.length > scoresCapacity) {
