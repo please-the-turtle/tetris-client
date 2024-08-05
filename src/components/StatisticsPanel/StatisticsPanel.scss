@@ -1,10 +1,10 @@
 .statistics-line {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     font-size: 1.4em;
     text-align: left;
     width: 100%;
-    gap: 1em;
     align-items: end;
     justify-content: space-between;
     font-weight: 200;

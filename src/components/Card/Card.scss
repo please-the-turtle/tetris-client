@@ -14,7 +14,7 @@ $card-container-bradius: 10px;
         inset rgba($color: black, $alpha: .1) -1px -1px,
         rgba($color: black, $alpha: .5) 5px 5px 20px;
     border-radius: $card-container-bradius;
-    min-width: 400px;
+    width: 450px;
 }
 
 .card-header {
@@ -36,6 +36,6 @@ $card-container-bradius: 10px;
 @media (max-aspect-ratio: 1/1.7) {
     .card-container {
         font-size: 5.5vw;
-        min-width: 100%;
+        width: 100%;
     }
 }

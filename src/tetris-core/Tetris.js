@@ -27,7 +27,6 @@ export default function Tetris(seed) {
     function dispose() {
         stateListeners.length = 0;
         gameOverListeners.length = 0;
-        console.log('disposed')
     }
 
     function tick() {

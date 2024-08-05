@@ -15,8 +15,8 @@ export default function NavLinks({ className }) {
             cName: "navigation-item"
         },
         {
-            title: "statistics",
-            path: "/statistics",
+            title: "profile",
+            path: "/profile",
             cName: "navigation-item"
         },
     ];

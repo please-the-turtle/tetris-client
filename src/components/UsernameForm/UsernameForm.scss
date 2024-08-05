@@ -1,0 +1,59 @@
+@import "/src/vars";
+
+.username-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.username-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    height: 1.8em;
+    width: 450px;
+    color: $white;
+    overflow: hidden;
+    border-radius: .3em;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(46, 46, 46, 0.25);
+    box-shadow:
+        inset rgba($color: white, $alpha: .1) 1px 1px,
+        inset rgba($color: black, $alpha: .1) -1px -1px,
+        rgba($color: black, $alpha: .5) 5px 5px 20px;
+
+    input {
+        flex-grow: 1;
+        border: none;
+        text-align: center;
+        font-size: 1em;
+        font-family: $fontFamilyDefault;
+        background: none;
+        color: $white;
+    }
+}
+
+.username-form-submit {
+    border-radius: 0;
+    color: $white;
+    background-color: rgba($color: $white, $alpha: .1);
+    text-shadow: black 0 0 10px;
+    padding: 0 .7em;
+}
+
+@media (max-aspect-ratio: 1/1.7) {
+    .username-form {
+        width: 100%;
+        margin: 0 20px;
+
+        input {
+            min-width: 20px;
+        }
+    }
+
+    .username-form-submit {
+        font-size: 5.5vw;
+    }
+}

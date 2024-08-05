@@ -3,8 +3,9 @@ import { getStatistics } from "../services/statisticsService";
 import CenterContainer from "../components/CenterContainer";
 import CardsContainer from "../components/CardsContainer";
 import StatisticsPanel from "../components/StatisticsPanel";
+import UsernameForm from "../components/UsernameForm";
 
-export default function Statistics() {
+export default function Profile() {
     const [statisticSingleplayer, setStatisticsSingleplayer] = useState();
     const [statisticMultiplayer, setStatisticsMultiplayer] = useState();
 
@@ -15,6 +16,7 @@ export default function Statistics() {
 
     return (
         <CenterContainer>
+            <UsernameForm/>
             <CardsContainer>
                 <StatisticsPanel header='singleplayer' statistics={statisticSingleplayer} />
                 <StatisticsPanel header='multiplayer' statistics={statisticMultiplayer} />

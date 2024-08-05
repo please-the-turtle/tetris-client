@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../Header";
 import PageNotFound from "../../pages/PageNotFound";
 import Singleplayer from "../../pages/Singleplayer";
-import Statistics from "../../pages/Statistics";
+import Profile from "../../pages/Profile";
 import Multiplayer from "../../pages/Multiplayer"
 import "./App.scss";
 
@@ -17,7 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Multiplayer />} />
             <Route path="singleplayer" element={<Singleplayer />} />
-            <Route path="statistics" element={<Statistics />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
       </main>
